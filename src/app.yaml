@@ -1,0 +1,20 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+
+# Static files route
+- url: /static
+  static_dir: app/static
+
+# This regex directs all routes to main.app
+- url: .* 
+  script: main.app
+
+# Google App Engine doesn't support some python modules.
+# Adding the ssl library solves the "ImportError: No module named _ssl"
+# when launching localy with dev_appserver.py
+libraries:
+- name: ssl
+  version: latest
