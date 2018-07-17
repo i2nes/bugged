@@ -21,4 +21,4 @@ class Hypotenuse(Resource):
         # Hypotenuse Equation (or is it...)
         result = sqrt( args['a'] * args['a'] + args['b'] * args['a'])
         
-        return { 'c': result }, 200
+        return { 'result': result }, 200
